@@ -1,0 +1,12 @@
+.loadMore{
+    background-color: #C02CAC;
+    color: #F2CAED;
+ border: none;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 20px;
+ display: block;
+}
+.loadMore:hover{
+    background-color: #78116A;
+}

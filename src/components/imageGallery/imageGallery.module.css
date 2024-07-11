@@ -1,0 +1,24 @@
+.imageList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 80px;
+
+}
+
+.imageListItem{
+    overflow: hidden;
+    width: 350px;
+    height: 230px;
+   background-size: cover;
+    border: 2px solid #F76EE4;
+    border-radius: 10px;
+}
+
+.image{
+    
+    width: 100%;
+    height: 100%;
+   
+}

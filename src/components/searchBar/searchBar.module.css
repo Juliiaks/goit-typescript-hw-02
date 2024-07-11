@@ -1,0 +1,45 @@
+.header{
+    background-color: #F76EE4;
+    border-radius: 10px;
+    height: 50px;
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.form{
+    display: flex;
+    align-items: center;
+
+  gap: 20px;
+}
+
+.input{
+width: 400px;
+height: 35px;
+background-color: #F2CAED;
+border: none;
+border-radius: 10px;
+padding-left: 15px;
+
+}
+
+.searchIcon{
+    width: 20px;
+    height: 20px;
+}
+
+.searchBtn{
+    border-radius: 50%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    background-color: #F2CAED;
+}
+
