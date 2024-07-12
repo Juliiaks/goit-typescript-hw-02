@@ -10,7 +10,9 @@ import ErrorMessage from './components/errorMessage/errorMessage'
 import Modal from 'react-modal';
 import Loader from './components/loader/loader'
 
- Modal.setAppElement('#root');
+Modal.setAppElement('#root');
+ 
+
 function App() {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
