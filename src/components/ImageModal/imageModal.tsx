@@ -13,7 +13,14 @@ const customStyles = {
   },
 };
 
-export default function ImageModal({urls, alt_description, closeModal, modalIsOpen}) {
+type Props = {
+   urls: string;
+  alt_description: string;
+  closeModal: () => void;
+  modalIsOpen: boolean;
+}
+
+export default function ImageModal({urls, alt_description, closeModal, modalIsOpen}:Props) {
    
 
     return (
