@@ -14,13 +14,13 @@ Modal.setAppElement('#root');
  
 
 function App() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
+  const [page, setPage] = useState<number>(1);
+  const [search, setSearch] = useState<string>("");
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedImage, setSelectedImage] = useState<any>(null)
   const [showBtn, setShowBtn] = useState(false);
   
 
@@ -48,7 +48,7 @@ function App() {
   }, [ page, search])
   
   
-  const handleSubmit = async (searchQuery) => {
+  const handleSubmit = async (searchQuery:string) => {
     setSearch(searchQuery)
     setImages([])
       setPage(1)
@@ -63,7 +63,7 @@ function App() {
 
   //  setShowBtn(images.total_pages && images.total_pages !== page)
 
-  function openModal(image) {
+  function openModal(image:any) {
     if (!modalIsOpen){
     setSelectedImage(image);
       setIsOpen(true);
