@@ -7,26 +7,27 @@ interface Image{
 index: number,
     alt_description: string,
     urls: {
-    small:string
+        small: string,
+        regular:string
 }
 }
 
 type Props = {
     images: Image[],
-    onImageClick: (image: { urls: { small: string }, alt_description: string }) => void;
+    onImageClick: (image: Image) => void;
    
 }
 
 export default function ImageGallery({images, onImageClick}: Props) {
     return (
         <ul className={css.imageList}>
-            {images.map(({ id, urls, alt_description }, index) => (
+            {images.map((image, index) => (
                 
-            <li key={`${id}-${index}`} onClick={() => onImageClick({ urls, alt_description })} className={css.imageListItem}>
+            <li key={`${image.id}-${index}`} onClick={() => onImageClick(image)} className={css.imageListItem}>
                     <ImageCard
                         // className={css.image}
-                    src={urls.small}
-                    alt={alt_description } />
+                    src={image.urls.small}
+                    alt={image.alt_description } />
                 </li>
             ))}
         </ul>

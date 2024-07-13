@@ -12,15 +12,34 @@ import Loader from './components/loader/loader'
 
 Modal.setAppElement('#root');
  
+interface Image{
+ id: number,
+index: number,
+    alt_description: string,
+    urls: {
+      small: string,
+      regular: string
+}
+}
+
+
+type ApiResponse = {
+  data: {
+    results: Image[];
+    total_pages: number;
+    total_results: number;
+  };
+}
+
 
 function App() {
-  const [images, setImages] = useState<any[]>([]);
+  const [images, setImages] = useState<Image[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<any>(null)
+  const [selectedImage, setSelectedImage] = useState<Image | null>(null)
   const [showBtn, setShowBtn] = useState(false);
   
 
@@ -31,7 +50,7 @@ function App() {
       try {
         setIsLoading(true)
         setError(false)
-        const response = await getImagesApi(search, page)
+        const response: ApiResponse = await getImagesApi(search, page)
         console.log(response)
         setImages((prev) => [...prev, ...response.data.results])
         setShowBtn(response.data.total_pages > 0 && response.data.total_pages !== page);
@@ -63,7 +82,7 @@ function App() {
 
   //  setShowBtn(images.total_pages && images.total_pages !== page)
 
-  function openModal(image:any) {
+  function openModal(image: Image) {
     if (!modalIsOpen){
     setSelectedImage(image);
       setIsOpen(true);
